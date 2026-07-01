@@ -7,5 +7,5 @@ variable "aws_region" {
 variable "client_bucket_name" {
   description = "Rock of Ages client host bucket (must be globally unique)"
   type        = string
-  default     = "client-bucket-hmn" 
+  default     = "client-bucket-hmn"
 }
