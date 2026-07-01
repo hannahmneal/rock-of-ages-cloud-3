@@ -13,6 +13,7 @@ export const RockImage = ({ imageId }) => {
     if (!imageId) return
 
     const poll = async () => {
+      console.log("...polling...")
       try {
         const data = await getRockImage(apiUrl, imageId)
         setImage(data)

@@ -23,10 +23,12 @@ export const uploadToS3 = async (presignedUrl, file) => {
 }
 
 export const getRockImage = async (apiUrl, imageId) => {
+  console.log(`getting rock image\napiUrl: ${apiUrl}\nimageId: ${imageId}`)
   const res = await fetch(`${apiUrl}/rock-images/${imageId}`, {
     headers: { Authorization: `Token ${getToken()}` },
   })
   if (!res.ok) throw new Error(`Failed to fetch image: ${res.status}`)
+    console.log(`get rock image response: ${res.json()}`)
   return res.json() // { id, rock, original_url, thumbnail_small_url, status, ... }
 }
 
